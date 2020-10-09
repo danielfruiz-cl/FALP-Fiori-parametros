@@ -1,0 +1,22 @@
+specVersion: '1.0'
+metadata:
+  name: 'falp_his_parametros'
+type: application
+ui5Theme: sap_fiori_3
+builder:
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: http://vhfals4dci.hec.falp.org:44300
+          client: 100
+          auth: basic
+        credentials:
+          username: env:DRUIZ
+          password: env:Getz007!
+        app:
+          name: ZHIS_PARAMETROS
+          package: ZINT
+          transport: S4DK900078
+        index: true
